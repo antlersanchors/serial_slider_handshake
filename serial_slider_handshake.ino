@@ -40,7 +40,8 @@ void loop() {
   x += v * dt;
 
   if (Serial.available() > 0) {
-   
+      
+      Serial.read(); // think this was critical; println doesn't clear the buffer, but this does
       Serial.println(f, BYTE);
    }
 
